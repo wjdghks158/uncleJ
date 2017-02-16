@@ -36,12 +36,23 @@ public class BoardModifyServlet extends HttpServlet{
 		String searchTextUTF8_E = URLEncoder.encode(searchText, "UTF-8");
 		String ip = request.getRemoteAddr();
     	//모델
-		BoardModel boardmodel = new BoardModel();
-		
-    	
-    	
-    	
-    };
+		BoardModel boardModel = new BoardModel();
+		boardModel.setNum(Integer.parseInt(num));
+		boardModel.setSubject(subject);
+		boardModel.setWriter(writer);
+		boardModel.setContents(contents);
+		boardModel.setIp(ip);
+		boardModel.setPageNum(pageNum);
+		boardModel.setSearchType(searchType);
+		boardModel.setSearchText(searchText);
+		//게시물 수정 처리
+		this.boardDAO = new BoardDAO();
+		this.boardDAO.update(boardModel);
+		//페이지 이동
+		response.sendRedirect(
+				"boardViewServlet?num="+num+"&pageNum="+pageNum+"&searchType="+searchType+"&searchText="+searchTextUTF8_E);
+    		
+    }
    
     
 }

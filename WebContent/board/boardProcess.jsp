@@ -53,6 +53,7 @@
     		pstmt = conn.prepareStatement("DELETE FROM BOARD WHERE NUM =?");
     		pstmt.setString(1,num);
     		pstmt.executeUpdate();
+    		
     		response.sendRedirect(
     		"boardList.jsp?pageNum="+pageNum+"&searchType="+searchType+"&searchText="+searchText);
 		} else {

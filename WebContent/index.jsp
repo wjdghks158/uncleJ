@@ -4,23 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>게시판 만들기</title>
 
 </head>
 
 <body>
-<script type="text/javascript">
-	function goUrl(url) {
-		location.href=url;
-	}
-	function boardModifyCheck() {
-		var form = document.boardModifyForm;
-		return true;
-	}
-</script>
-안녕하세여
-아년ㅇ하세여
-홍순일
-<input type="button" value="목록" onclick="goUrl('board/boardList.jsp');" />
+<p>
+<a href="<%=request.getContextPath() %>/board/boardList.jsp">게시판 만들기</a>
+</p>
 </body>
 </html>

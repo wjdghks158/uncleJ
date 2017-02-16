@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ page import="java.sql.*"%>
-    <%request.setCharacterEncoding("euc-kr"); %>
     <%
     Connection conn = null;
     PreparedStatement pstmt = null;
@@ -24,6 +23,7 @@
     if (pageNum != null) {
     	pageNumTemp = Integer.parseInt(pageNum);
     }
+ // 한글파라미터 처리
     String searchTextUTF8 = new String(searchText.getBytes("ISO-8859-1"),"UTF-8");
     
     if(!"".equals(searchText)) {
